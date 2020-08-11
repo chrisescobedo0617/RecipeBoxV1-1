@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from recipes.models import Author, Recipe
 
-# Create your views here.
+def homepage_view(request):
+    return render(request, "homepage.html", {"recipes": ""})
