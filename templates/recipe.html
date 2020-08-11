@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+</head>
+<body>
+    <h1>{{ recipe }}</h1>
+    <h3>Description| {{ recipe.description }}</h3>
+    <h3>Time required| {{ recipe.time_required }}</h3>
+    <h3>Instructions| </h3><p>{{ recipe.instructions }}</p>
+    <h2>Author| <a href="/author/{{recipe.author.id}}">{{ recipe.author }}</a></h2>
+
+    <h4><a href="/">Home</a></h4>
+</body>
+</html>

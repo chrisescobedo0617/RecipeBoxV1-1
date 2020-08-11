@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Author</title>
 </head>
 <body>
-    <h1>RecipeBox V1</h1>
-    {% for recipe in recipes %}
+    <h1>{{ author.name }} Recipes</h1>
+    {% for recipe in recipes%}
     <ul style="list-style: none">
         <li>
-            <h2><a href="/recipe/{{recipe.id}}/" > {{ recipe.title }}<a></h2>
+            <h2><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}<a></h2>
         </li>
     </ul>
     {% endfor %}
+
+    <h4><a href="/">Home</a></h4>
 </body>
 </html>
