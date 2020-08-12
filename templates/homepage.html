@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>RecipeBox V1</h1>
+    {% if request.user.is_authenticated %}
+        <a href="/logout/">Logout</a>
+        <h3>Logged in as: <h2>{{ request.user }}</h2> </h3>
+    {% else %}
+        <a href="/register/">Register</a>
+        <a href="/login/">Login</a>
+    {% endif %}
     {% for recipe in recipes %}
     <ul style="list-style: none">
         <li>
