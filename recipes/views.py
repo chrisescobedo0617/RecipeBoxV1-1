@@ -31,6 +31,8 @@ def add_author(request):
         
         form = AddAuthorForm()
         return render(request, "generic_form.html", {"form": form})
+    else:
+        return render(request, "error.html")
 
 @login_required
 def add_recipe(request):
