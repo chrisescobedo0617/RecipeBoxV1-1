@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>{{ recipe }}</h1>
     <h3>Description| {{ recipe.description }}</h3>
     <h3>Time required| {{ recipe.time_required }}</h3>
-    <h3>Instructions| </h3><p>{{ recipe.instructions }}</p>
-    <h2>Author| <a href="/author/{{recipe.author.id}}">{{ recipe.author }}</a></h2>
+    <h3>Instructions|</h3>
+    <p>{{ recipe.instructions }}</p>
+    <h2>
+      Author|
+      <a href="/author/{{recipe.recipe_author.id}}/"
+        >{{ recipe.recipe_author }}</a
+      >
+    </h2>
 
     <h4><a href="/">Home</a></h4>
-</body>
+    {% if request.user.is_authenticated %} {% if favorite_status %}
+    <h4><a href="/unfavorite/{{recipe.id}}/">Unfavorite</a></h4>
+    {% else %}
+    <h4><a href="/favorite/{{recipe.id}}/">Favorite</a></h4>
+    {% endif %}
+    <h4><a href="/recipe/{{recipe.id}}/edit/">Edit This Recipe!</a></h4>
+    {% endif %}
+  </body>
 </html>

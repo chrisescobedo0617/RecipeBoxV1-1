@@ -1,0 +1,11 @@
+<h1>These are {{author.name}}'s favorite recipes!</h1>
+
+{% for favorite in favorites %}
+    <ul style="list-style: none">
+        <li>
+            <h2><a href="/recipe/{{favorite.id}}" > {{favorite}}<a></h2>
+        </li>
+    </ul>
+{% endfor %}
+
+<h4><a href="/">Home</a></h4>
